@@ -1,16 +1,21 @@
-# This is a sample Python script.
+from image_utils import image_utils as iu
+import numpy as np
+import cv2
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # image = iu.load_img("images/color_lenna.png")
+    mask = iu.generate_gaussian(1, 1, 5)
+    print(mask)
+    print(cv2.getGaussianKernel(5, 1))
+    # print(iu.apply_filter(image, mask, 0, 3))
+    # width, height = 10, 1
+    # color_image = np.random.randint(0, 256, (width, height, 3), dtype=np.uint8)
+    # print(color_image)
+    #
+    # # Save the array as an image using OpenCV
+    # cv2.imwrite('color_image.jpg', color_image)
+    #
+    # # Optionally, display the image using OpenCV
+    # cv2.imshow('Color Image', color_image)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
